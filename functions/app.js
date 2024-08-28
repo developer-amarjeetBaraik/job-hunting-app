@@ -24,4 +24,4 @@ app.listen(port, ()=>{
     console.log(`App is listening on post ${port}`)
 })
 
-// export const handler = Serverless(app);
+export const handler = Serverless(app);
