@@ -5,9 +5,10 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "build": "netlify deploy --prod",
-    "start": "node functions/app.js"
-  },
+  "build": "echo 'No build step needed for serverless functions'",
+  "start": "node functions/index.js",
+  "deploy": "netlify deploy --prod"
+},
   "keywords": [],
   "author": "Amarjeet",
   "license": "ISC",
