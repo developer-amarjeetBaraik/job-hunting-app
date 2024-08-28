@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Company</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <form id="signupForm" enctype="multipart/form-data" method="post" action="/user-data">
+            <input type="text" required name="name" id="name" placeholder="Enter your name">
+            <input type="email" required name="email" id="email" placeholder="Enter email address">
+            <input type="tel" required name="phone" id="phone" placeholder="Enter phone number">
+            <select name="role" required id="role">
+                <option disabled  selected>Select one</option>
+                <option value="Full stack developer">Full stack developer</option>
+                <option value="JavaScript developer">JavaScript developer</option>
+                <option value="Python developer">Python developer</option>
+                <option value="Java full stack developer">Java full stack developer</option>
+                <option value="Java developer">Java developer</option>
+            </select>
+            <input type="file" required name="resume" id="resume" accept=".pdf">
+            <button type="submit" id="submitBtn">Submit</button>
+        </form>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

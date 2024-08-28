@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --primary-colour : #002D62;
+    --secondary-colour : #6CB4EE;
+    --text-color : white;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+main{
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-colour);
+}
+#signupForm{
+    padding: 30px 10px;
+    margin: 20px;
+    width: 25%;
+    height: 300px;
+    position: absolute;
+    right: 0px;
+    background-color: var(--secondary-colour);
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+#signupForm input{
+    padding: 0 5px;
+    width: 50%;
+    height: 25px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+#signupForm select{
+    padding: 0 5px;
+    height: 25px;
+    width: 50%;
+    border: none;
+    border-radius: 5px;
+}
+#signupForm button{
+    width: 20%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;;
+}

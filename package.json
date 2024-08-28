@@ -1,0 +1,21 @@
+{
+  "name": "job-finder",
+  "version": "1.0.0",
+  "description": "a web app where job seekers submit thair resume to HR",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Amarjeet",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.4",
+    "multer": "^1.4.5-lts.1"
+  }
+}
