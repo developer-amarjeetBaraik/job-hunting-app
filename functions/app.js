@@ -20,8 +20,8 @@ app.get('/',(req, res)=>{
     res.sendFile(path.join(__filepath, '../public', 'index.html'))
 })
 
-// app.listen(port, ()=>{
-//     console.log(`App is listening on post ${port}`)
-// })
+app.listen(port, ()=>{
+    console.log(`App is listening on post ${port}`)
+})
 
-export const handler = Serverless(app);
+// export const handler = Serverless(app);
