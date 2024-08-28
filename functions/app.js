@@ -11,7 +11,7 @@ const port = process.env.PORT
 app.use(express.static('./public'))
 app.use(express.json())
 
-app.use('/user-data', userData)
+// app.use('/user-data', userData)
 
 const __filepath = fileURLToPath(import.meta.url)
 
