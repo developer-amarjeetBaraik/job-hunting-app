@@ -1,6 +1,5 @@
 import 'dotenv/config'
 import express from "express";
-import Serverless from 'serverless-http';
 import { fileURLToPath } from "url";
 import path from "path";
 import userData from "./routes/userdata.js";
@@ -23,8 +22,12 @@ app.get('/hello',(req, res)=>{
     res.send('hello from server')
 })
 
-app.listen(port, ()=>{
-    console.log(`App is listening on post ${port}`)
-})
+app.get('/api/hello', (req, res) => {
+    res.json({ message: 'Hello, world!' });
+  });
 
-export const handler = Serverless(app);
+// app.listen(port, ()=>{
+//     console.log(`App is listening on post ${port}`)
+// })
+
+export default app;
