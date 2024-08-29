@@ -7,7 +7,7 @@ import userData from "./routes/userdata.js";
 const app = express()
 const port = process.env.PORT
 
-app.use(express.static('./public'))
+// app.use(express.static('./public'))
 app.use(express.json())
 
 app.use('/user-data', userData)
@@ -17,7 +17,8 @@ const __filepath = fileURLToPath(import.meta.url)
 // console.log(path.join(__filepath, '../public', 'index.html'))
 
 app.get('/',(req, res)=>{
-    res.sendFile(path.join(__filepath, '../public', 'index.html'))
+    res.send('home page')
+    // res.sendFile(path.join(__filepath, '../public', 'index.html'))
 })
 
 app.get('/hello',(req, res)=>{
