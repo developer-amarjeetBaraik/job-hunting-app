@@ -10,9 +10,8 @@ const port = process.env.PORT
 const __filepath = fileURLToPath(import.meta.url)
 const __basepath = path.dirname(__filepath)
 
-const baseDir = process.env.LAMBDA_TASK_ROOT || __basepath;
 
-app.use(express.static(path.join(baseDir, 'public')))
+app.use(express.static(path.join(__basepath, 'public')))
 app.use(express.json())
 
 app.use('/user-data', userData)
@@ -20,8 +19,8 @@ app.use('/user-data', userData)
 
 app.get('/',(req, res)=>{
     // res.send('home page')
-    console.log(path.join(baseDir, 'public'))
-    res.sendFile(path.join(baseDir, 'public', 'index.html'))
+    console.log(path.join(__basepath, 'public'))
+    res.sendFile(path.join(__basepath, 'public', 'index.html'))
 })
 
 app.get('/hello',(req, res)=>{
