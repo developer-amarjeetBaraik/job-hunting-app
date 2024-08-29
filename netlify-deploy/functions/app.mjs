@@ -19,6 +19,9 @@ app.use('/user-data', userData)
 app.get('/',(req, res)=>{
     res.sendFile(path.join('../public', 'index.html'))
 })
+app.get('/hello',(req, res)=>{
+    res.send('hello from server')
+})
 
 app.listen(port, ()=>{
     console.log(`App is listening on post ${port}`)
