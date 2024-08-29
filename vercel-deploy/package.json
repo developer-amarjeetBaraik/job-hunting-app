@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
   "build": "echo 'No build step needed for serverless functions'",
-  "start": "node functions/app.mjs"
+  "start": "node app.js"
 },
   "keywords": [],
   "author": "Amarjeet",

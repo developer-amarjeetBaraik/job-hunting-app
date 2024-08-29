@@ -3,7 +3,7 @@ import express from "express";
 import Serverless from 'serverless-http';
 import { fileURLToPath } from "url";
 import path from "path";
-import userData from "./routes/userdata.mjs";
+import userData from "./routes/userdata.js";
 
 const app = express()
 const port = process.env.PORT
@@ -17,7 +17,7 @@ const __filepath = fileURLToPath(import.meta.url)
 
 
 app.get('/',(req, res)=>{
-    res.sendFile(path.join('/public', 'index.html'))
+    res.sendFile(path.join('./public', 'index.html'))
 })
 app.get('/hello',(req, res)=>{
     res.send('hello from server')
