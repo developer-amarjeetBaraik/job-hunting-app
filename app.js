@@ -20,7 +20,7 @@ console.log(__basepath)
 
 app.get('/',(req, res)=>{
     // res.send('home page')
-    console.log('done')
+    console.log(path.join(__basepath, './public'))
     res.sendFile(path.join(__basepath, './public', 'index.html'))
 })
 
