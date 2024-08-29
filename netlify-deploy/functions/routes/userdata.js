@@ -9,7 +9,7 @@ const router = Router()
 router.use(express.json())
 
 //Connecting databse using mongoose
-mongoose.connect('mongodb://localhost:27017/jobSeekers').then(data => {
+mongoose.connect(`mongodb+srv://${process.env.DB_USER_NAME}:${process.env.DB_PASS_KEY}@project1.jjlpb.mongodb.net/`).then(data => {
     console.log('Db connected..')
 }).catch(err => {
     console.log(err)
