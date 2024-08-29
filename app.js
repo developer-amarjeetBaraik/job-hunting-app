@@ -2,7 +2,7 @@ import 'dotenv/config'
 import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
-import userData from "./vercel-deploy/api/routes/userdata.js";
+import userData from "./routes/userdata.js";
 
 const app = express()
 const port = process.env.PORT
