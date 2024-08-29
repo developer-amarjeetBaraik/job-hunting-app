@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
   "build": "echo 'No build step needed for serverless functions'",
-  "start": "node functions/index.js",
+  "start": "node functions/app.js",
   "deploy": "netlify deploy --prod"
 },
   "keywords": [],
