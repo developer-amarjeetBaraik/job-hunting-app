@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
   "build": "echo 'No build step needed for serverless functions'",
-  "start": "node functions/app.mjs",
-  "deploy": "netlify deploy --prod"
+  "start": "node functions/app.mjs"
 },
   "keywords": [],
   "author": "Amarjeet",
