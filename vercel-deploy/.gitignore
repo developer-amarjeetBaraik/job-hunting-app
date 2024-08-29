@@ -105,3 +105,4 @@ venv/
 
 # Windows files
 Thumbs.db
+.vercel
