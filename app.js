@@ -35,4 +35,4 @@ app.listen(port, ()=>{
     console.log(`App is listening on post ${port}`)
 })
 
-// export default app;
+export default app;
