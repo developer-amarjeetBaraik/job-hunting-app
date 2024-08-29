@@ -3,7 +3,7 @@ import express from "express";
 import Serverless from 'serverless-http';
 import { fileURLToPath } from "url";
 import path from "path";
-import userData from "./routes/userdata.js";
+import userData from "./routes/userdata.mjs";
 
 const app = express()
 const port = process.env.PORT
