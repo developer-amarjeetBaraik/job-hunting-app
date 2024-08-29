@@ -13,11 +13,11 @@ app.use(express.json())
 
 app.use('/user-data', userData)
 
-const __filepath = fileURLToPath(import.meta.url)
+// const __filepath = fileURLToPath(import.meta.url)
 
 
 app.get('/',(req, res)=>{
-    res.sendFile(path.join(__filepath, '../public', 'index.html'))
+    res.sendFile(path.join('../public', 'index.html'))
 })
 
 app.listen(port, ()=>{
