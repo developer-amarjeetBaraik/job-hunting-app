@@ -16,7 +16,7 @@ const __filepath = fileURLToPath(import.meta.url)
 
 
 app.get('/',(req, res)=>{
-    res.sendFile(path.join('./public', 'index.html'))
+    res.sendFile(path.join(__filepath,'./public', 'index.html'))
 })
 app.get('/hello',(req, res)=>{
     res.send('hello from server')
