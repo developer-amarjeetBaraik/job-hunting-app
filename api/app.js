@@ -26,8 +26,8 @@ app.get('/api/hello', (req, res) => {
     res.json({ message: 'Hello, world!' });
   });
 
-// app.listen(port, ()=>{
-//     console.log(`App is listening on post ${port}`)
-// })
+app.listen(port, ()=>{
+    console.log(`App is listening on post ${port}`)
+})
 
-export default app;
+// export default app;
