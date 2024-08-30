@@ -2,10 +2,10 @@
   "name": "job-finder",
   "version": "1.0.0",
   "description": "This app helps job seeks to upload their resume to HR and HR can track the resumes.",
-  "main": "app.js",
+  "main": "api/app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js"
+    "start": "node api/app.js"
   },
   "keywords": [],
   "author": "Amarjeet",
