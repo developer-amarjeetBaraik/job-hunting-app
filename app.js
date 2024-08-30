@@ -18,9 +18,9 @@ app.use('/user-data', userData)
 
 
 app.get('/',(req, res)=>{
-    // res.send('home page')
+    res.send('home page')
     console.log(path.join(__basepath, 'public'))
-    res.sendFile(path.join(__basepath, 'public', 'index.html'))
+    // res.sendFile(path.join(__basepath, 'public', 'index.html'))
 })
 
 app.get('/hello',(req, res)=>{
