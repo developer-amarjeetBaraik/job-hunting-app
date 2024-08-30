@@ -34,7 +34,7 @@ const storage = multer.diskStorage({
             cb(null, './resumes')
         }
         else {
-            fs.mkdirSync('./resumes', (err) => {
+            fs.mkdir('./resumes', (err) => {
                 if (err) {
                     console.log(err)
                 }
