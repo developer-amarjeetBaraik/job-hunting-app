@@ -29,7 +29,18 @@ const resumeInfo = mongoose.model('resumeInfo', userSchema)
 //Defining path and name of the uploded file
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './resumes')
+        if (fs.existsSync('./resumes')) {
+            console.log('exist')
+            cb(null, './resumes')
+        }
+        else {
+            fs.mkdirSync('./resumes', (err) => {
+                if (err) {
+                    console.log(err)
+                }
+            })
+            cb(null, './resumes')
+        }
     },
     filename: (req, file, cb) => {
         cb(null, req.body.name + Date.now() + path.extname(file.originalname))
@@ -37,10 +48,12 @@ const storage = multer.diskStorage({
 })
 
 // Setting storage to uploded file
+const upload = multer({ storage: storage })
+
 
 
 //Handleing the '/user-data' request
-router.post('/',upload.single('resume'), async (req, res) => {
+router.post('/', upload.single('resume'), async (req, res) => {
     try {
         console.log(req.file)
 
