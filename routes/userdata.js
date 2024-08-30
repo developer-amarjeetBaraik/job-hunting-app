@@ -53,7 +53,7 @@ const upload = multer({ storage: storage })
 
 
 //Handleing the '/user-data' request
-router.post('/', async (req, res) => {
+router.post('/', upload.single('resume'), async (req, res) => {
     try {
         console.log(req.file)
 
