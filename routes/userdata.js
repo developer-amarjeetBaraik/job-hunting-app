@@ -21,52 +21,50 @@ const userSchema = new mongoose.Schema({
     email: String,
     phone: String,
     role: String,
-    resumePath: String, // Path where the resume is stored
+    resumeData: String, // Path where the resume is stored
 })
 
 const resumeInfo = mongoose.model('resumeInfo', userSchema)
 
-//Defining path and name of the uploded file
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        if (fs.existsSync('./resumes')) {
-            console.log('exist')
-            cb(null, './resumes')
-        }
-        else {
-            fs.mkdir('./resumes', (err) => {
-                if (err) {
-                    console.log(err)
-                }
-            })
-            cb(null, './resumes')
-        }
-    },
-    filename: (req, file, cb) => {
-        cb(null, req.body.name + Date.now() + path.extname(file.originalname))
-    }
-})
-
 // Setting storage to uploded file
-const upload = multer({ storage: storage })
-
+const upload = multer({ dest: 'uploads/' });
 
 
 //Handleing the '/user-data' request
 router.post('/', upload.single('resume'), async (req, res) => {
     try {
-        console.log(req.file)
 
-        const newResume = new resumeInfo({
-            name: req.body.name,
-            email: req.body.email,
-            phone: req.body.phone,
-            role: req.body.role,
-            resumePath: req.file.path
-        })
+        const filePath = req.file.path; // Path to the uploaded file
 
-        await newResume.save()
-        res.send('User data saved successfully!')
+        // Read the file and convert it to a buffer
+        fs.readFile(filePath, async (err, data) => {
+            if (err) {
+                console.error('Error reading file:', err);
+                return res.status(500).send('Error reading file');
+            }
+
+            const buffer = Buffer.from(data); // Convert the file data to a buffer
+
+            // Clean up the temporary file
+            fs.unlink(filePath, (err) => {
+                if (err) {
+                    console.error('Error deleting temp file:', err);
+                }
+            });
+
+            const newResume = new resumeInfo({
+                name: req.body.name,
+                email: req.body.email,
+                phone: req.body.phone,
+                role: req.body.role,
+                resumeData: buffer
+            })
+
+            await newResume.save()
+            res.send('User data saved successfully!')
+
+        });
+
     } catch (err) {
         console.error('Error saving user data:', err)
         res.status(500).send('Error saving user data.')
