@@ -11,7 +11,7 @@ const __filepath = fileURLToPath(import.meta.url)
 const __basepath = path.dirname(__filepath)
 
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join('public')))
 app.use(express.json())
 
 app.use('/user-data', userData)
