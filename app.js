@@ -20,7 +20,7 @@ app.use('/user-data', userData)
 app.get('/',(req, res)=>{
     // res.send('home page')
     console.log(path.join(__dirname, './public', 'index.html'))
-    res.sendFile(path.join(__dirname, './public', 'index.html'))
+    res.sendFile(path.join(__dirname, './public'))
 })
 
 app.get('/hello',(req, res)=>{
