@@ -2,6 +2,7 @@ import express, { Router } from 'express'
 import path from 'path'
 import multer from 'multer'
 import mongoose from 'mongoose'
+import fs from 'fs'
 
 const router = Router()
 
@@ -36,7 +37,6 @@ const storage = multer.diskStorage({
 })
 
 // Setting storage to uploded file
-const upload = multer({ storage: storage })
 
 
 //Handleing the '/user-data' request
