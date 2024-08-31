@@ -3,6 +3,7 @@ import path from 'path'
 import multer from 'multer'
 import mongoose from 'mongoose'
 import fs from 'fs'
+import serverless from 'serverless-http'
 
 const router = Router()
 
@@ -73,4 +74,4 @@ router.post('/', upload.single('resume'), async (req, res) => {
 
 export default router
 
-// export const handler = Serverless(router);
+export const handler = serverless(router);
