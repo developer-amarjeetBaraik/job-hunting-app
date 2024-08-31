@@ -1,10 +1,12 @@
 import 'dotenv/config'
-import express from "express";
+import express, {Router} from "express";
+import serverless from 'serverless-http';
 import { fileURLToPath } from "url";
 import path from "path";
 import userData from "./routes/userdata.js";
 
 const app = express()
+const router = Router()
 const port = process.env.PORT
 
 const __filepath = fileURLToPath(import.meta.url)
@@ -35,4 +37,5 @@ app.listen(port, ()=>{
     console.log(`App is listening on post ${port}`)
 })
 
-export default app;
+app.use('/.netlify/functions/app', router);
+export const handler = serverless(app);
