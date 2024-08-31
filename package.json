@@ -5,7 +5,9 @@
   "main": "api.js",
   "type": "module",
   "scripts": {
-    "start": "node functions/api.js"
+    "build": "npm run build",
+    "start": "node functions/api.js",
+    "serve": "netlify dev"
   },
   "keywords": [],
   "author": "Amarjeet",
