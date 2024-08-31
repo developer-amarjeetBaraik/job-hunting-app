@@ -16,6 +16,7 @@ const __basepath = path.dirname(__filepath)
 app.use(express.static(path.join('public')))
 app.use(express.json())
 
+app.use('/.netlify/functions/api', router);
 app.use('/user-data', userData)
 
 
@@ -37,5 +38,4 @@ router.listen(port, ()=>{
     console.log(`App is listening on post ${port}`)
 })
 
-app.use('/.netlify/functions/api', router);
 export const handler = serverless(app);
