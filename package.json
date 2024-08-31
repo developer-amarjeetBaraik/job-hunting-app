@@ -5,7 +5,6 @@
   "main": "api.js",
   "type": "module",
   "scripts": {
-    "build": "npm run build",
     "start": "node functions/api.js",
     "serve": "netlify dev"
   },
