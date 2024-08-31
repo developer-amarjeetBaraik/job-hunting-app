@@ -23,7 +23,7 @@ app.use('/user-data', userData)
 router.get('/',(req, res)=>{
     // res.send('home page')
     console.log(path.join(__dirname, './public', 'index.html'))
-    res.sendFile(path.join(__dirname, './public'))
+    res.sendFile(path.join(__dirname, './public', 'index.html'))
 })
 
 router.get('/hello',(req, res)=>{
