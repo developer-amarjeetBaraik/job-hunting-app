@@ -1,5 +1,4 @@
 [build]
-  command = "npm install && npm run build"
   functions = "functions" # Specify the directory where your functions are stored
   publish = "public" # Specify the directory where your static files are located, if applicable
 
